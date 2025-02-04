@@ -1,15 +1,16 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom'
+import MainBox from "../style/HomeStyle";
 
 const Home = () => {
     const navigate = useNavigate()
 
-    return <div>
-        <h1>포켓몬스터</h1>
+    return <MainBox>
+        <img src="src/img/pokemon_logo.png"/>
         <button onClick={() => {
             navigate('/Dex')
         }}>시작하기</button>
-    </div>
+    </MainBox>
 }
 
 export default Home

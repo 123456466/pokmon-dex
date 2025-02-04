@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Board from '../components/Dashboard'
 import Cards from '../components/PokemonCard'
 import MOCK_DATA from '../components/PokemonList'
+import PokemonCardsContainer from '../style/PokemonCardContainer.jsx'
 
 const MY_POKEMON = [
     {id: 1, get: false},
@@ -18,11 +19,11 @@ const PokemonMain = () => {
 
     return <div>
         <Board getPokemons={getPokemons}/>
-        <div>
+        <PokemonCardsContainer>
             {MOCK_DATA.map(({ img_url, korean_name, id }) => (
                 <Cards img_url={img_url} korean_name={korean_name} id={id} />
             ))}
-        </div>
+        </PokemonCardsContainer>
     </div>
 }
 
