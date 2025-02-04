@@ -1,7 +1,8 @@
 import React from "react";
+import PokemonMain from "../components/ControlTower";
 
 const Dex = () => {
-    return <div>DEX</div>
+return <PokemonMain />
 }
 
 export default Dex
