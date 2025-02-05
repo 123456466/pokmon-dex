@@ -20,10 +20,15 @@ const PokemonMain = () => {
 
     const getPokemon = (id) => {
         if(myPokemons[5].get){
-            alert('보관할 수 있는 포켓몬은 6마리 입니다.')
+            return alert('보관할 수 있는 포켓몬은 6마리 입니다.')
         }
+
+        if(entry.find((getPokemon) => getPokemon.pokemon_id === id)){
+            return alert('이미 잡은 포켓몬 입니다.')
+        }
+
         MOCK_DATA.filter((pokemon) => {
-            return (pokemon.id == id)? entry.push({id: crypto.randomUUID(), img: pokemon.img_url, name: pokemon.korean_name, get: true}) : null
+            return (pokemon.id == id)? entry.push({id: crypto.randomUUID(), img: pokemon.img_url, name: pokemon.korean_name, get: true, pokemon_id: pokemon.id}) : null
         })
         const present = [...entry, ...PALLET_TOWN].slice(0,6)
         setPokemon(present)
