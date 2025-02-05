@@ -1,27 +1,39 @@
 import { useState } from 'react'
 import Board from '../components/Dashboard'
-import Cards from '../components/PokemonCard'
+import PokemonCard from '../components/PokemonCard'
 import MOCK_DATA from '../components/PokemonList'
 import PokemonCardsContainer from '../style/PokemonCardContainer.jsx'
 
-const MY_POKEMON = [
-    {id: 1, get: false},
-    {id: 2, get: false},
-    {id: 3, get: false},
-    {id: 4, get: false},
-    {id: 5, get: false},
-    {id: 6, get: false}
+const PALLET_TOWN = [
+    { id: 1, get: false },
+    { id: 2, get: false },
+    { id: 3, get: false },
+    { id: 4, get: false },
+    { id: 5, get: false },
+    { id: 6, get: false }
 ]
 
+const entry = []
+
 const PokemonMain = () => {
-    const [getPokemons,setPokemon] = useState(MY_POKEMON)
-    const [newPokemons,setNewPokemon] = useState('')
+    const [myPokemons, setPokemon] = useState(PALLET_TOWN)
+
+    const getPokemon = (id) => {
+        if(myPokemons[5].get){
+            alert('보관할 수 있는 포켓몬은 6마리 입니다.')
+        }
+        MOCK_DATA.filter((pokemon) => {
+            return (pokemon.id == id)? entry.push({id: pokemon.id, img: pokemon.img_url, name: pokemon.korean_name, get: true}) : null
+        })
+        const present = [...entry, ...PALLET_TOWN].slice(0,6)
+        setPokemon(present)
+    }
 
     return <div>
-        <Board getPokemons={getPokemons}/>
+        <Board myPokemons={myPokemons} />
         <PokemonCardsContainer>
             {MOCK_DATA.map(({ img_url, korean_name, id }) => (
-                <Cards img_url={img_url} korean_name={korean_name} id={id} />
+                <PokemonCard img_url={img_url} korean_name={korean_name} id={id} getPokemon={getPokemon} />
             ))}
         </PokemonCardsContainer>
     </div>
