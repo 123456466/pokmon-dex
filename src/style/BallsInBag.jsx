@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const BallsInBag = styled.div`
-        display: flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
