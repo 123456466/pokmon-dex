@@ -23,14 +23,22 @@ const PokemonMain = () => {
             alert('보관할 수 있는 포켓몬은 6마리 입니다.')
         }
         MOCK_DATA.filter((pokemon) => {
-            return (pokemon.id == id)? entry.push({id: pokemon.id, img: pokemon.img_url, name: pokemon.korean_name, get: true}) : null
+            return (pokemon.id == id)? entry.push({id: crypto.randomUUID(), img: pokemon.img_url, name: pokemon.korean_name, get: true}) : null
         })
         const present = [...entry, ...PALLET_TOWN].slice(0,6)
         setPokemon(present)
     }
 
+    const del = (id) => {
+        entry.map((pokemon,index) => {
+            (pokemon.id === id)? entry.splice(index,1) : null
+        })
+        const updatePokemon = [...entry, ...PALLET_TOWN].slice(0,6)
+        setPokemon(updatePokemon)
+    }
+
     return <div>
-        <Board myPokemons={myPokemons} />
+        <Board myPokemons={myPokemons} del={del} />
         <PokemonCardsContainer>
             {MOCK_DATA.map(({ img_url, korean_name, id }) => (
                 <PokemonCard img_url={img_url} korean_name={korean_name} id={id} getPokemon={getPokemon} />

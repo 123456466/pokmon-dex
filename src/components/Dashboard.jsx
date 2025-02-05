@@ -4,7 +4,7 @@ import Ball from '../style/ball.jsx'
 import BallsInBag from '../style/BallsInBag.jsx'
 import EntryPokemon from "../style/EntryPokemonStyle.jsx";
 
-const Dashboard = ({ myPokemons }) => {
+const Dashboard = ({ myPokemons,del }) => {
     return <MyBag>
         <p>나의 포켓몬</p>
         <BallsInBag>
@@ -12,7 +12,7 @@ const Dashboard = ({ myPokemons }) => {
                 (get) ? <EntryPokemon id={id}>
                     <img src={img}/>
                     <p>{name}</p>
-                    <button>보내기</button>
+                    <button onClick={() => del(id)}>보내기</button>
                 </EntryPokemon> :
                 <Ball src='src/img/포켓몬볼.png' />
             ))}
