@@ -1,16 +1,8 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom'
-import MainBox from "../style/HomeStyle";
+import ShowHome from "../components/ShowHome";
 
 const Home = () => {
-    const navigate = useNavigate()
+  return <ShowHome />;
+};
 
-    return <MainBox>
-        <img src="src/img/pokemon_logo.png"/>
-        <button onClick={() => {
-            navigate('/Dex')
-        }}>시작하기</button>
-    </MainBox>
-}
-
-export default Home
+export default Home;
