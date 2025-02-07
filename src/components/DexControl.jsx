@@ -19,7 +19,9 @@ const entry = [];
 const PokemonMain = () => {
   const navigate = useNavigate();
 
-  const [myPokemons, setPokemon] = useState(PALLET_TOWN);
+const bagInpokemon = [...entry,...PALLET_TOWN].slice(0,6)
+
+  const [myPokemons, setPokemon] = useState(bagInpokemon);
 
   const getPokemon = (id) => {
     if (myPokemons[5].get) {
