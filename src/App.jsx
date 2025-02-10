@@ -1,6 +1,6 @@
-import './App.css'
-import Router from './shared/Router'
-import GlobalStyle from './style/GlobalStyle'
+import "./App.css";
+import Router from "./shared/Router";
+import GlobalStyle from "./style/global/GlobalStyle";
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
       <GlobalStyle />
       <Router />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

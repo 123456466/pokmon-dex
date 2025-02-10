@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import MainBox from "../style/HomeStyle";
+import MainBox from "../style/home/HomeStyle";
 
 const ShowHome = () => {
   const navigate = useNavigate();
@@ -19,4 +19,4 @@ const ShowHome = () => {
   );
 };
 
-export default ShowHome
+export default ShowHome;

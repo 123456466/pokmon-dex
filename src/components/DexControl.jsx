@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Board from "./Dashboard.jsx";
 import PokemonCard from "./PokemonCard.jsx";
 import MOCK_DATA from "./PokemonList.jsx";
-import PokemonCardsContainer from "../style/PokemonCardContainer.jsx";
+import PokemonCardsContainer from "../style/dex/PokemonCardContainer.jsx";
 
 const PALLET_TOWN = [
   { id: 1, get: false },
@@ -19,7 +19,7 @@ const entry = [];
 const PokemonMain = () => {
   const navigate = useNavigate();
 
-const bagInpokemon = [...entry,...PALLET_TOWN].slice(0,6)
+  const bagInpokemon = [...entry, ...PALLET_TOWN].slice(0, 6);
 
   const [myPokemons, setPokemon] = useState(bagInpokemon);
 
@@ -28,18 +28,17 @@ const bagInpokemon = [...entry,...PALLET_TOWN].slice(0,6)
       return alert("보관할 수 있는 포켓몬은 6마리 입니다.");
     }
 
-    if (entry.find((getPokemon) => getPokemon.pokemon_id === id)) {
+    if (entry.find((getPokemon) => getPokemon.id === id)) {
       return alert("이미 잡은 포켓몬 입니다.");
     }
 
     MOCK_DATA.filter((pokemon) => {
-      return pokemon.id == id
+      return pokemon.id === id
         ? entry.push({
-            id: crypto.randomUUID(),
+            id: pokemon.id,
             img: pokemon.img_url,
             name: pokemon.korean_name,
             get: true,
-            pokemon_id: pokemon.id,
           })
         : null;
     });

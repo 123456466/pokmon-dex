@@ -1,9 +1,9 @@
 import React from "react";
 
-const Detail = ({back,img_url,name,types,description}) => {
+const Detail = ({ back, img_url, name, types, description }) => {
   return (
     <div>
-      <img src={img_url}/>
+      <img src={img_url} />
       <p>{name}</p>
       <p>{types}</p>
       <p>{description}</p>

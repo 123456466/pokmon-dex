@@ -6,6 +6,6 @@ const GlobalStyle = createGlobalStyle`
         justify-content: center;
         background-color: navajowhite
     }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

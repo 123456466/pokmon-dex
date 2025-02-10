@@ -1,5 +1,5 @@
 import React from "react";
-import ShowHome from "../components/ShowHome";
+import ShowHome from "../components/HomeConrtol";
 
 const Home = () => {
   return <ShowHome />;

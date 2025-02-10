@@ -1,5 +1,5 @@
 import React from "react";
-import CardBox from "../style/PokemonCardStyle";
+import CardBox from "../style/dex/PokemonCardStyle";
 
 const PokemonCarde = ({
   id,
@@ -9,10 +9,22 @@ const PokemonCarde = ({
   moveToDetail,
 }) => {
   return (
-    <CardBox key={id} onClick={() => {moveToDetail(id) }}>
+    <CardBox
+      key={id}
+      onClick={() => {
+        moveToDetail(id);
+      }}
+    >
       <img src={img_url} />
       <p>{korean_name}</p>
-      <button className='get' onClick={(e) => { e.stopPropagation(); getPokemon(id)}}>잡기</button>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          getPokemon(id);
+        }}
+      >
+        잡기
+      </button>
     </CardBox>
   );
 };

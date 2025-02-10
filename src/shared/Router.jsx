@@ -10,7 +10,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dex" element={<Dex />} />
-        <Route path="/Modal/:id" element={<Modal />} />
+        <Route path="/modal/:id" element={<Modal />} />
       </Routes>
     </BrowserRouter>
   );
