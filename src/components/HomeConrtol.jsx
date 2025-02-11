@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import MainBox from "../style/home/HomeStyle";
+import StartBtn from "../style/home/StartBtnStyle";
 
 const ShowHome = () => {
   const navigate = useNavigate();
@@ -8,13 +9,13 @@ const ShowHome = () => {
   return (
     <MainBox>
       <img src="src/img/pokemon_logo.png" />
-      <button
+      <StartBtn
         onClick={() => {
           navigate("/Dex");
         }}
       >
         시작하기
-      </button>
+      </StartBtn>
     </MainBox>
   );
 };

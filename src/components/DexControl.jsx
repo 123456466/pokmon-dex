@@ -60,7 +60,7 @@ const PokemonMain = () => {
 
   return (
     <div>
-      <Board myPokemons={myPokemons} del={del} />
+      <Board myPokemons={myPokemons} del={del} moveToDetail={moveToDetail}/>
       <PokemonCardsContainer>
         {MOCK_DATA.map(({ img_url, korean_name, id }) => (
           <PokemonCard

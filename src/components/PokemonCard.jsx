@@ -1,5 +1,6 @@
 import React from "react";
 import CardBox from "../style/dex/PokemonCardStyle";
+import GlobalBtn from "../style/global/globalBtnStyle";
 
 const PokemonCarde = ({
   id,
@@ -17,14 +18,14 @@ const PokemonCarde = ({
     >
       <img src={img_url} />
       <p>{korean_name}</p>
-      <button
+      <GlobalBtn
         onClick={(e) => {
           e.stopPropagation();
           getPokemon(id);
         }}
       >
         잡기
-      </button>
+      </GlobalBtn>
     </CardBox>
   );
 };

@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
-const EntryPokemon = styled.div`
+
+const DetailBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 2vmin;
-  width: 15vmin;
-  height: 23vmin;
+  padding: 10vmin;
+  border-radius: 3vmin;
   background-color: white;
-  border-radius: 1vmin;
   outline: 0.3vmin solid tomato;
 `;
 
-export default EntryPokemon;
+export default DetailBox

@@ -1,14 +1,16 @@
 import React from "react";
+import GlobalBtn from "../style/global/globalBtnStyle";
+import DetailBox from "../style/modal/PokemonDetailBoxStyle";
 
 const Detail = ({ back, img_url, name, types, description }) => {
   return (
-    <div>
+    <DetailBox>
       <img src={img_url} />
       <p>{name}</p>
       <p>{types}</p>
       <p>{description}</p>
-      <button onClick={() => back()}>돌아가기</button>
-    </div>
+      <GlobalBtn onClick={() => back()}>돌아가기</GlobalBtn>
+    </DetailBox>
   );
 };
 
